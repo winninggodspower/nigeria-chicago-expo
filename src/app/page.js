@@ -1,103 +1,342 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import { useState } from "react"
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  TrendingUp,
+  Share2Icon,
+  Ticket,
+  Star
+} from "lucide-react"
+import Image from "next/image"
+
+
+const ticketIframes = {
+  regular: {
+    src: "https://links.chicagonigerians.com/widget/form/L6TgvC0AbAiVXlYz4caX",
+    id: "inline-L6TgvC0AbAiVXlYz4caX",
+    formId: "L6TgvC0AbAiVXlYz4caX",
+    title: "Nigeria @ 65 Registration - General",
+    height: "1111",
+  },
+  vendor: {
+    src: "https://links.chicagonigerians.com/widget/form/G5bDpvqKYmrXKUWPBNxz",
+    id: "inline-G5bDpvqKYmrXKUWPBNxz",
+    formId: "G5bDpvqKYmrXKUWPBNxz",
+    title: "Nigeria @ 65 Registration - Vendor",
+    height: "1034",
+  },
+  vip: {
+    src: "https://links.chicagonigerians.com/widget/form/g8A8SgU18q10ceOVz76P",
+    id: "inline-g8A8SgU18q10ceOVz76P",
+    formId: "g8A8SgU18q10ceOVz76P",
+    title: "Nigeria @ 65 Registration - VIP",
+    height: "1032",
+  },
+}
+
+export default function EventPage() {
+  const [selectedTicket, setSelectedTicket] = useState('vendor') // "regular" | "vendor" | "vip"
+
+  const handleTicketSelect = (ticketType) => {
+    setSelectedTicket(ticketType)
+  }
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen ">
+      {/* Hero Section */}
+      <div className="relative bg-[url('/hero-bg.png')] text-white py-20 px-4">
+        <div className="relative max-w-5xl mx-auto text-center">
+          <Image
+            alt="nigerian logo"
+            src={'/NIGERIA@65.png'}
+            width={280}
+            height={256}
+            className="mx-auto w-40 md:w-70 h-auto"
+            priority
+          />
+          <h2 className="text-4xl md:text-7xl font-bold mt-10 md:mt-14 font-tienne">Business & Culture Exhibition</h2>
+          <p className="text-2xl md:text-3xl mt-4">Celebrate Independence Day In Style!</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Left Column - Event Details & Tickets */}
+          <div className="lg:col-span-2">
+            {/* Event Details */}
+            <div className="rounded-[18px] border border-[#00000096]">
+              <div className="p-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <Calendar className="w-5 h-5 text-green-600" />
+                  <h3 className="text-xl font-tienne font-bold">Event Details</h3>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <Calendar className="w-4 h-4 text-custom-gray" />
+                      <div>
+                        <p className="text-lg">October 1, 2025</p>
+                        <p className="text-sm text-gray-600">Independence Day</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-4 h-4 text-custom-gray" />
+                      <div>
+                        <p className="text-lg">Lions Woods, Des Plaines,</p>
+                        <p className="text-sm text-gray-600">IL 60016</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <Clock className="w-4 h-4 text-custom-gray" />
+                      <div>
+                        <p className="text-lg">12:00pm - 6:00pm</p>
+                        <p className="text-sm text-gray-600">6 hours celebration</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-[#00000038] ">
+                  <p className="text-sm text-custom-gray">
+                    Celebrate Nigeria's 64th Independence with cultural performances, authentic cuisine, networking
+                    opportunities, and live entertainment. Join us for an unforgettable evening honoring our nation's
+                    heritage and future.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Choose Your Experience */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-tienne font-bold mb-4">Choose Your Experience</h3>
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {/* Regular Ticket */}
+                <div
+                  className={`cursor-pointer transition-all rounded-[18px] ${selectedTicket === "regular" ? "border-[3] border-custom-green-dark bg-green-50" : " border border-[#00000096]"
+                    }`}
+                  onClick={() => handleTicketSelect("regular")}
+                >
+                  <div className="px-6 py-8">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex gap-2 items-center">
+                        <Ticket className="size-4 text-custom-green-dark"/>
+                        <h4 className="text-lg">Regular Ticket</h4>
+                      </div>
+                      <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
+                        FREE
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-custom-gray mb-4">Free access to venue</p>
+
+                    <div className="space-y-1 text-custom-gray text-[13px]">
+                      <p className="font-semibold">Includes:</p>
+                      <ul className=" ">
+                        <li>• Access to main venue</li>
+                        <li>• Cultural performances viewing</li>
+                        <li>• Basic seating</li>
+                        <li>• Event program included</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vendor Ticket */}
+                <div
+                  className={`cursor-pointer transition-all rounded-[18px] ${selectedTicket === "vendor" ? "border-[3] border-custom-green-dark" : " border border-[#00000096]"
+                    }`}
+                  onClick={() => handleTicketSelect("vendor")}
+                >
+                  <div className="px-6 py-8">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex gap-2 items-center">
+                        <Users className="size-4 text-custom-green-dark"/>
+                        <h4 className="text-lg">Vendor Ticket</h4>
+                      </div>
+                      <span className="badge">$250</span>
+                    </div>
+
+                    <p className="text-sm text-custom-gray mb-4">
+                      Perfect for businesses looking to showcase products and services. Includes booth space, networking
+                      access, and marketing opportunities.
+                    </p>
+
+                    <div className="space-y-1 text-custom-gray text-[13px]">
+                      <p className="font-semibold">Includes:</p>
+                      <ul className=" ">
+                        <li>• Booth Space (10x10ft)</li>
+                        <li>• Business Networking</li>
+                        <li>• Marketing Materials Display</li>
+                        <li>• VIP Access Areas</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* VIP Ticket */}
+                <div
+                  className={`relative cursor-pointer transition-all rounded-[18px] ${selectedTicket === "vip" ? "border-[3] border-custom-green-dark" : " border border-[#00000096]"
+                    }`}
+                  onClick={() => handleTicketSelect("vip")}
+                >
+                  <div className="bg-[#3F4341] text-white text-xs py-1 px-4 rounded-[5px]  absolute top-0 left-1/2 -translate-1/2">Most Popular</div>
+                  <div className="px-6 py-8">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex gap-2 items-center">
+                        <Star className="size-4 text-[#F4D10C]"/>
+                        <h4 className="text-lg">VIP Ticket</h4>
+                      </div>
+                      <span className="badge">$20</span>
+                    </div>
+
+                    <p className="text-sm text-custom-gray mb-4">
+                      Premium Attendee Experience With Exclusive Access To Special Areas And Enhanced Networking
+                      Opportunities
+                    </p>
+
+                    <div className="space-y-1 text-custom-gray text-[13px]">
+                      <p className="font-semibold">Includes:</p>
+                      <ul className=" ">
+                        <li>• Premium Seating</li>
+                        <li>• Welcome Cocktail</li>
+                        <li>• Cultural Performance Access</li>
+                        <li>• Networking Lounge</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Purchase Panel & Social */}
+          <div className="space-y-6">
+
+            {/* Registration Form */}
+            {selectedTicket && (
+              <div className="bg-white rounded-[18px] border shadow-sm">
+                <div className="p-6">
+                  <h3 className="text-xl font-tienne font-semibold mb-4">Complete Registration</h3>
+                  <div className="w-full h-96 border rounded-[18px] overflow-hidden">
+                    <iframe
+                      src={ticketIframes[selectedTicket].src}
+                      className="w-full h-full border-none"
+                      id={ticketIframes[selectedTicket].id}
+                      title={ticketIframes[selectedTicket].title}
+                      data-layout="{'id':'INLINE'}"
+                      data-trigger-type="alwaysShow"
+                      data-trigger-value=""
+                      data-activation-type="alwaysActivated"
+                      data-activation-value=""
+                      data-deactivation-type="neverDeactivate"
+                      data-deactivation-value=""
+                      data-form-name={ticketIframes[selectedTicket].title}
+                      data-height={ticketIframes[selectedTicket].height}
+                      data-layout-iframe-id={ticketIframes[selectedTicket].id}
+                      data-form-id={ticketIframes[selectedTicket].formId}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Share Event */}
+            <div className="bg-white rounded-[18px] border shadow-sm">
+              <div className="p-6">
+                <div className="flex items-start gap-5 mb-4">
+                  <Share2Icon className="size-6 mt-1 text-green-600" />
+                  <div>
+                    <h3 className="text-xl font-tienne font-semibold mb-5">Share Event</h3>
+                    <div className="flex gap-3">
+                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
+                        <Facebook className="w-4 h-4" />
+                      </button>
+                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
+                        <Twitter className="w-4 h-4" />
+                      </button>
+                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
+                        <Linkedin className="w-4 h-4" />
+                      </button>
+                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
+                        <Instagram className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        {/* Event Statistics */}
+        <div className="mt-[70px]">
+          <h3 className="text-2xl text-center font-tienne font-bold mb-8">Event Statistics</h3>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-white rounded-[18px] border shadow-sm">
+              <div className="px-6 py-9">
+                <div className="flex gap-2 justify-between mb-3">
+                  <p className="">Total Attendees</p>
+                  <TrendingUp className="size-4 text-custom-green mb-2" />
+                </div>
+                <p className="text-4xl font-bold text-custom-green">1,247</p>
+                <p className="text-sm mt-1.5 text-custom-gray">Registered for event</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-[18px] border shadow-sm">
+              <div className="px-6 py-9">
+                <div className="flex gap-2 justify-between mb-3">
+                  <p className="">Regular Tickets</p>
+                  <Users className="size-4 text-custom-green mb-2" />
+                </div>
+                <p className="text-4xl font-bold text-custom-green">892</p>
+                <p className="text-sm mt-1.5 text-custom-gray">Free access tickets</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-[18px] border shadow-sm">
+              <div className="px-6 py-9">
+                <div className="flex gap-2 justify-between mb-3">
+                  <p className="">Vendor Tickets</p>
+                  <TrendingUp className="size-4 text-custom-green mb-2" />
+                </div>
+                <p className="text-4xl font-bold text-custom-green">245</p>
+                <p className="text-sm mt-1.5 text-custom-gray">Enhanced experience</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-[18px] border shadow-sm">
+              <div className="px-6 py-9">
+                <div className="flex gap-2 justify-between mb-3">
+                  <p className="">VIP Tickets</p>
+                  <Users className="size-4 text-yellow-600 mb-2" />
+                </div>
+                <p className="text-4xl font-bold text-yellow-600">110</p>
+                <p className="text-sm mt-1.5 text-custom-gray">Exclusive access</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Load external script for form functionality */}
+      <script src="https://links.chicagonigerians.com/js/form_embed.js" async />
     </div>
-  );
+  )
 }
