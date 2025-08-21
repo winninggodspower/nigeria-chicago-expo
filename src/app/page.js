@@ -292,7 +292,7 @@ export default function EventPage() {
               <div className="px-6 py-9">
                 <div className="flex gap-2 justify-between mb-3">
                   <p className="">Total Attendees</p>
-                  <TrendingUp className="size-4 text-custom-green mb-2" />
+                    <Users className="size-4 text-custom-green mb-2" />
                 </div>
                 <p className="text-4xl font-bold text-custom-green">1,247</p>
                 <p className="text-sm mt-1.5 text-custom-gray">Registered for event</p>
@@ -303,7 +303,7 @@ export default function EventPage() {
               <div className="px-6 py-9">
                 <div className="flex gap-2 justify-between mb-3">
                   <p className="">Regular Tickets</p>
-                  <Users className="size-4 text-custom-green mb-2" />
+                  <Ticket className="size-4 text-custom-green mb-2" />
                 </div>
                 <p className="text-4xl font-bold text-custom-green">892</p>
                 <p className="text-sm mt-1.5 text-custom-gray">Free access tickets</p>
@@ -325,7 +325,7 @@ export default function EventPage() {
               <div className="px-6 py-9">
                 <div className="flex gap-2 justify-between mb-3">
                   <p className="">VIP Tickets</p>
-                  <Users className="size-4 text-yellow-600 mb-2" />
+                  <Star className="size-4 text-yellow-600 mb-2" />
                 </div>
                 <p className="text-4xl font-bold text-yellow-600">110</p>
                 <p className="text-sm mt-1.5 text-custom-gray">Exclusive access</p>
