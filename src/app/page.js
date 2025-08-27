@@ -1,342 +1,248 @@
 "use client"
 
-import { useState } from "react"
-import {
-  Calendar,
-  Clock,
-  MapPin,
-  Users,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  TrendingUp,
-  Share2Icon,
-  Ticket,
-  Star
-} from "lucide-react"
-import Image from "next/image"
+import { Phone, Mail, Check } from "lucide-react"
+import CustomButton from "@/components/custom-button"
+import Navbar from "./components/navbar"
+import Link from "next/link"
 
-
-const ticketIframes = {
-  regular: {
-    src: "https://links.chicagonigerians.com/widget/form/L6TgvC0AbAiVXlYz4caX",
-    id: "inline-L6TgvC0AbAiVXlYz4caX",
-    formId: "L6TgvC0AbAiVXlYz4caX",
-    title: "Nigeria @ 65 Registration - General",
-    height: "1111",
-  },
-  vendor: {
-    src: "https://links.chicagonigerians.com/widget/form/G5bDpvqKYmrXKUWPBNxz",
-    id: "inline-G5bDpvqKYmrXKUWPBNxz",
-    formId: "G5bDpvqKYmrXKUWPBNxz",
-    title: "Nigeria @ 65 Registration - Vendor",
-    height: "1034",
-  },
-  vip: {
-    src: "https://links.chicagonigerians.com/widget/form/g8A8SgU18q10ceOVz76P",
-    id: "inline-g8A8SgU18q10ceOVz76P",
-    formId: "g8A8SgU18q10ceOVz76P",
-    title: "Nigeria @ 65 Registration - VIP",
-    height: "1032",
-  },
-}
-
-export default function EventPage() {
-  const [selectedTicket, setSelectedTicket] = useState('vendor') // "regular" | "vendor" | "vip"
-
-  const handleTicketSelect = (ticketType) => {
-    setSelectedTicket(ticketType)
-  }
+export default function HomePage() {
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <Navbar/>
+
       {/* Hero Section */}
-      <div className="relative bg-[url('/hero-bg.png')] text-white py-20 px-4">
-        <div className="relative max-w-5xl mx-auto text-center">
-          <Image
-            alt="nigerian logo"
-            src={'/NIGERIA@65.png'}
-            width={280}
-            height={256}
-            className="mx-auto w-40 md:w-70 h-auto"
-            priority
-          />
-          <h2 className="text-4xl md:text-7xl font-bold mt-10 md:mt-14 font-tienne">Business & Culture Exhibition</h2>
-          <p className="text-2xl md:text-3xl mt-4">Celebrate Independence Day In Style!</p>
+      <section className="relative h-[38rem] bg-gray-900">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/african-women.webp')",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
-      </div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white px-4 max-w-4xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Connecting Nigerians Across Chicago</h1>
+            <p className="text-lg md:text-xl mb-8 text-pretty opacity-90">
+              A welcoming community for friendship, culture, business, and support - online and in person.
+            </p>
+            <Link href="/event">
+              <CustomButton variant="secondary" size="lg">
+                Join Free →
+              </CustomButton>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Left Column - Event Details & Tickets */}
-          <div className="lg:col-span-2">
-            {/* Event Details */}
-            <div className="rounded-[18px] border border-[#00000096]">
-              <div className="p-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <Calendar className="w-5 h-5 text-green-600" />
-                  <h3 className="text-xl font-tienne font-bold">Event Details</h3>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <Calendar className="w-4 h-4 text-custom-gray" />
-                      <div>
-                        <p className="text-lg">October 1, 2025</p>
-                        <p className="text-sm text-gray-600">Independence Day</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <MapPin className="w-4 h-4 text-custom-gray" />
-                      <div>
-                        <p className="text-lg">Lions Woods, Des Plaines,</p>
-                        <p className="text-sm text-gray-600">IL 60016</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-4 h-4 text-custom-gray" />
-                      <div>
-                        <p className="text-lg">12:00pm - 6:00pm</p>
-                        <p className="text-sm text-gray-600">6 hours celebration</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-[#00000038] ">
-                  <p className="text-sm text-custom-gray">
-                    Celebrate Nigeria's 64th Independence with cultural performances, authentic cuisine, networking
-                    opportunities, and live entertainment. Join us for an unforgettable evening honoring our nation's
-                    heritage and future.
-                  </p>
-                </div>
+      {/* What We're Building Section */}
+      <section className="bg-green-700 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Logo and Come and Connect */}
+            <div className="text-center lg:text-left">
+              {/* CN Logo */}
+              <div className="flex justify-center lg:justify-start mb-8">
+                <img
+                  src="/CN-logo.webp"
+                  alt="NACR Logo"
+                  width={100}
+                  height={100}
+                  className="size-80" 
+                />
               </div>
+
+              <h3 className="text-2xl font-bold text-white mb-4">Come and Connect</h3>
+              <p className="text-green-100 text-lg leading-relaxed">
+                Chicago Nigerians is NACR's online space where most of the activity happens. It's where members chat,
+                share experiences, and keep the energy going between meetups.
+              </p>
             </div>
 
-            {/* Choose Your Experience */}
-            <div className="mt-12">
-              <h3 className="text-2xl font-tienne font-bold mb-4">Choose Your Experience</h3>
+            {/* Right Column - What We're Building */}
+            <div>
+              <h2 className="text-4xl font-bold text-white mb-6">What We're Building</h2>
+              <p className="text-green-100 text-lg leading-relaxed mb-8">
+                Nigerian Association of Chicago Residents (NACR) is the official community hub for Nigerians in the
+                Chicagoland area. We connect members to events, opportunities, services, and each other, so you never
+                feel like you're doing life here alone.
+              </p>
 
-              <div className="grid md:grid-cols-3 gap-4">
-                {/* Regular Ticket */}
-                <div
-                  className={`cursor-pointer transition-all rounded-[18px] ${selectedTicket === "regular" ? "border-[3] border-custom-green-dark bg-green-50" : " border border-[#00000096]"
-                    }`}
-                  onClick={() => handleTicketSelect("regular")}
-                >
-                  <div className="px-6 py-8">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex gap-2 items-center">
-                        <Ticket className="size-4 text-custom-green-dark"/>
-                        <h4 className="text-lg">Regular Ticket</h4>
-                      </div>
-                      <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
-                        FREE
-                      </span>
-                    </div>
-
-                    <p className="text-sm text-custom-gray mb-4">Free access to venue</p>
-
-                    <div className="space-y-1 text-custom-gray text-[13px]">
-                      <p className="font-semibold">Includes:</p>
-                      <ul className=" ">
-                        <li>• Access to main venue</li>
-                        <li>• Cultural performances viewing</li>
-                        <li>• Basic seating</li>
-                        <li>• Event program included</li>
-                      </ul>
-                    </div>
+              {/* Feature List */}
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center space-x-3 p-4 border border-green-600 rounded-lg">
+                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                    <Check size={16} className="text-green-700" />
                   </div>
+                  <span className="text-white text-lg font-medium">Community events & meetings</span>
                 </div>
 
-                {/* Vendor Ticket */}
-                <div
-                  className={`cursor-pointer transition-all rounded-[18px] ${selectedTicket === "vendor" ? "border-[3] border-custom-green-dark" : " border border-[#00000096]"
-                    }`}
-                  onClick={() => handleTicketSelect("vendor")}
-                >
-                  <div className="px-6 py-8">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex gap-2 items-center">
-                        <Users className="size-4 text-custom-green-dark"/>
-                        <h4 className="text-lg">Vendor Ticket</h4>
-                      </div>
-                      <span className="badge">$250</span>
-                    </div>
-
-                    <p className="text-sm text-custom-gray mb-4">
-                      Perfect for businesses looking to showcase products and services. Includes booth space, networking
-                      access, and marketing opportunities.
-                    </p>
-
-                    <div className="space-y-1 text-custom-gray text-[13px]">
-                      <p className="font-semibold">Includes:</p>
-                      <ul className=" ">
-                        <li>• Booth Space (10x10ft)</li>
-                        <li>• Business Networking</li>
-                        <li>• Marketing Materials Display</li>
-                        <li>• VIP Access Areas</li>
-                      </ul>
-                    </div>
+                <div className="flex items-center space-x-3 p-4 border border-green-600 rounded-lg">
+                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                    <Check size={16} className="text-green-700" />
                   </div>
+                  <span className="text-white text-lg font-medium">Business networking & support</span>
                 </div>
 
-                {/* VIP Ticket */}
-                <div
-                  className={`relative cursor-pointer transition-all rounded-[18px] ${selectedTicket === "vip" ? "border-[3] border-custom-green-dark" : " border border-[#00000096]"
-                    }`}
-                  onClick={() => handleTicketSelect("vip")}
-                >
-                  <div className="bg-[#3F4341] text-white text-xs py-1 px-4 rounded-[5px]  absolute top-0 left-1/2 -translate-1/2">Most Popular</div>
-                  <div className="px-6 py-8">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex gap-2 items-center">
-                        <Star className="size-4 text-[#F4D10C]"/>
-                        <h4 className="text-lg">VIP Ticket</h4>
-                      </div>
-                      <span className="badge">$20</span>
-                    </div>
-
-                    <p className="text-sm text-custom-gray mb-4">
-                      Premium Attendee Experience With Exclusive Access To Special Areas And Enhanced Networking
-                      Opportunities
-                    </p>
-
-                    <div className="space-y-1 text-custom-gray text-[13px]">
-                      <p className="font-semibold">Includes:</p>
-                      <ul className=" ">
-                        <li>• Premium Seating</li>
-                        <li>• Welcome Cocktail</li>
-                        <li>• Cultural Performance Access</li>
-                        <li>• Networking Lounge</li>
-                      </ul>
-                    </div>
+                <div className="flex items-center space-x-3 p-4 border border-green-600 rounded-lg">
+                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                    <Check size={16} className="text-green-700" />
                   </div>
+                  <span className="text-white text-lg font-medium">Resources for newcomers & families</span>
                 </div>
               </div>
+
+              <Link href="/event">
+                <CustomButton variant="secondary" size="lg">
+                  Join Free →
+                </CustomButton>
+              </Link>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Right Column - Purchase Panel & Social */}
-          <div className="space-y-6">
-
-            {/* Registration Form */}
-            {selectedTicket && (
-              <div className="bg-white rounded-[18px] border shadow-sm">
-                <div className="p-6">
-                  <h3 className="text-xl font-tienne font-semibold mb-4">Complete Registration</h3>
-                  <div className="w-full h-96 border rounded-[18px] overflow-hidden">
-                    <iframe
-                      src={ticketIframes[selectedTicket].src}
-                      className="w-full h-full border-none"
-                      id={ticketIframes[selectedTicket].id}
-                      title={ticketIframes[selectedTicket].title}
-                      data-layout="{'id':'INLINE'}"
-                      data-trigger-type="alwaysShow"
-                      data-trigger-value=""
-                      data-activation-type="alwaysActivated"
-                      data-activation-value=""
-                      data-deactivation-type="neverDeactivate"
-                      data-deactivation-value=""
-                      data-form-name={ticketIframes[selectedTicket].title}
-                      data-height={ticketIframes[selectedTicket].height}
-                      data-layout-iframe-id={ticketIframes[selectedTicket].id}
-                      data-form-id={ticketIframes[selectedTicket].formId}
-                    />
-                  </div>
-                </div>
+      {/* Nigeria @ 65 Section */}
+      <section className="bg-teal-700 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Main Content */}
+            <div>
+              <div className="inline-block bg-gray-900 text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
+                What's Happening Next
               </div>
-            )}
 
-            {/* Share Event */}
-            <div className="bg-white rounded-[18px] border shadow-sm">
-              <div className="p-6">
-                <div className="flex items-start gap-5 mb-4">
-                  <Share2Icon className="size-6 mt-1 text-green-600" />
-                  <div>
-                    <h3 className="text-xl font-tienne font-semibold mb-5">Share Event</h3>
-                    <div className="flex gap-3">
-                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
-                        <Facebook className="w-4 h-4" />
-                      </button>
-                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
-                        <Twitter className="w-4 h-4" />
-                      </button>
-                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
-                        <Linkedin className="w-4 h-4" />
-                      </button>
-                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
-                        <Instagram className="w-4 h-4" />
-                      </button>
-                    </div>
+              <h2 className="text-4xl font-bold text-white mb-2">Nigeria @ 65!</h2>
+              <h3 className="text-2xl font-semibold text-white mb-4">Business & Culture Exhibition</h3>
+              <p className="text-xl text-teal-100 mb-6">Celebrate Independence Day in style!</p>
+
+              <div className="text-teal-100 space-y-4 mb-6">
+                <p className="text-lg leading-relaxed">
+                  Join us for a lively showcase of local businesses and cultural experiences where you can discover new
+                  favorites, support local entrepreneurs, and enjoy a fun-filled day with music, food, and vibrant
+                  connections.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  All you have to do now is get your <strong>free ticket!</strong> Registration is required, so we can
+                  make sure you're part of the fun.
+                </p>
+                <p className="text-lg leading-relaxed italic">
+                  Be among the first 100 guests to register and receive an exclusive <strong>Swag Bag</strong>.
+                </p>
+              </div>
+
+              <Link href="/event">
+                <CustomButton variant="secondary" size="lg">
+                  Get Your Free Ticket →
+                </CustomButton>
+              </Link>
+            </div>
+
+            {/* Right Column - Feature Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+              {/* Top Row Cards */}
+              <div className="bg-yellow-400 p-6 rounded-lg">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center">
+                    <span className="text-yellow-400 text-lg">🙌</span>
                   </div>
+                  <h4 className="font-bold text-gray-900">Discover & Celebrate</h4>
                 </div>
+                <p className="text-gray-800 text-sm leading-relaxed">
+                  Meet vendors, make new connections and enjoy the best of our community - all in one place.
+                </p>
+              </div>
+
+              <div className="bg-yellow-400 p-6 rounded-lg">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center">
+                    <span className="text-yellow-400 text-lg">🛡️</span>
+                  </div>
+                  <h4 className="font-bold text-gray-900">Explore Diverse Businesses</h4>
+                </div>
+                <p className="text-gray-800 text-sm leading-relaxed">
+                  Shop fashion & beauty, try services, and connect with pros in finance, real estate, legal and more.
+                </p>
+              </div>
+
+              {/* Bottom Card - Spans full width on larger screens */}
+              <div className="bg-yellow-400 p-6 rounded-lg md:col-span-2 lg:col-span-1 xl:col-span-2">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center">
+                    <span className="text-yellow-400 text-lg">🏆</span>
+                  </div>
+                  <h4 className="font-bold text-gray-900">Early Bird Perks</h4>
+                </div>
+                <p className="text-gray-800 text-sm leading-relaxed">
+                  First 100 registered guests get a special swag bag. Register now and enjoy the rewards!
+                </p>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
 
-        {/* Event Statistics */}
-        <div className="mt-[70px]">
-          <h3 className="text-2xl text-center font-tienne font-bold mb-8">Event Statistics</h3>
+      {/* Community Section */}
+      <section className="relative bg-green-600 py-16 overflow-hidden">
+        {/* Geometric Pattern Background */}
+        <div className="absolute inset-0 opacity-20">
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23fbbf24' fillOpacity='0.4'%3E%3Cpath d='M30 30l15-15v30l-15-15zm-15 0l-15-15v30l15-15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: "60px 60px",
+            }}
+          ></div>
+        </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-white rounded-[18px] border shadow-sm">
-              <div className="px-6 py-9">
-                <div className="flex gap-2 justify-between mb-3">
-                  <p className="">Total Attendees</p>
-                    <Users className="size-4 text-custom-green mb-2" />
-                </div>
-                <p className="text-4xl font-bold text-custom-green">1,247</p>
-                <p className="text-sm mt-1.5 text-custom-gray">Registered for event</p>
-              </div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Be Part of the NACR Community</h2>
+          <p className="text-green-100 text-lg mb-8">
+            Whether you're looking to network, give back, or pursue new opportunities, NACR is where Nigerians in
+            Chicago connect, grow, and thrive.
+          </p>
+          <CustomButton variant="secondary" size="lg">
+            Contact Us →
+          </CustomButton>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-50 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            {/* Logo */}
+            <div className="flex items-center space-x-2 mb-4 md:mb-0 h-24">
+              <img
+                src="/ng-chicago-logo.webp"
+                alt="NACR Logo"
+                width={40}
+                height={40}
+                className="h-full w-auto py-4" 
+              />
             </div>
 
-            <div className="bg-white rounded-[18px] border shadow-sm">
-              <div className="px-6 py-9">
-                <div className="flex gap-2 justify-between mb-3">
-                  <p className="">Regular Tickets</p>
-                  <Ticket className="size-4 text-custom-green mb-2" />
-                </div>
-                <p className="text-4xl font-bold text-custom-green">892</p>
-                <p className="text-sm mt-1.5 text-custom-gray">Free access tickets</p>
+            {/* Contact Info */}
+            <div className="flex items-center space-x-6 text-sm text-gray-600">
+              <div className="flex items-center space-x-2">
+                <Mail size={16} />
+                <span>nacr@chicagonigerians.com</span>
               </div>
-            </div>
-
-            <div className="bg-white rounded-[18px] border shadow-sm">
-              <div className="px-6 py-9">
-                <div className="flex gap-2 justify-between mb-3">
-                  <p className="">Vendor Tickets</p>
-                  <TrendingUp className="size-4 text-custom-green mb-2" />
-                </div>
-                <p className="text-4xl font-bold text-custom-green">245</p>
-                <p className="text-sm mt-1.5 text-custom-gray">Enhanced experience</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-[18px] border shadow-sm">
-              <div className="px-6 py-9">
-                <div className="flex gap-2 justify-between mb-3">
-                  <p className="">VIP Tickets</p>
-                  <Star className="size-4 text-yellow-600 mb-2" />
-                </div>
-                <p className="text-4xl font-bold text-yellow-600">110</p>
-                <p className="text-sm mt-1.5 text-custom-gray">Exclusive access</p>
+              <div className="flex items-center space-x-2">
+                <Phone size={16} />
+                <span>(312) 555-0123</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Load external script for form functionality */}
-      <script src="https://links.chicagonigerians.com/js/form_embed.js" async />
+          <div className="mt-6 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
+            © 2024 Nigerian Association of Chicago Residents - All Rights Reserved
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
