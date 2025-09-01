@@ -6,11 +6,10 @@ import Navbar from "./components/navbar"
 import Link from "next/link"
 
 export default function HomePage() {
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <Navbar/>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative h-[38rem] bg-gray-900">
@@ -45,13 +44,7 @@ export default function HomePage() {
             <div className="text-center lg:text-left">
               {/* CN Logo */}
               <div className="flex justify-center lg:justify-start mb-8">
-                <img
-                  src="/CN-logo.webp"
-                  alt="NACR Logo"
-                  width={100}
-                  height={100}
-                  className="size-80" 
-                />
+                <img src="/CN-logo.webp" alt="NACR Logo" width={100} height={100} className="size-80" />
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-4">Come and Connect</h3>
@@ -105,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* Nigeria @ 65 Section */}
-      <section className="bg-teal-700 py-16">
+      <section className="bg-green-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Main Content */}
@@ -116,9 +109,9 @@ export default function HomePage() {
 
               <h2 className="text-4xl font-bold text-white mb-2">Nigeria @ 65!</h2>
               <h3 className="text-2xl font-semibold text-white mb-4">Business & Culture Exhibition</h3>
-              <p className="text-xl text-teal-100 mb-6">Celebrate Independence Day in style!</p>
+              <p className="text-xl text-green-100 mb-6">Celebrate Independence Day in style!</p>
 
-              <div className="text-teal-100 space-y-4 mb-6">
+              <div className="text-green-100 space-y-4 mb-6">
                 <p className="text-lg leading-relaxed">
                   Join us for a lively showcase of local businesses and cultural experiences where you can discover new
                   favorites, support local entrepreneurs, and enjoy a fun-filled day with music, food, and vibrant
@@ -143,10 +136,10 @@ export default function HomePage() {
             {/* Right Column - Feature Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
               {/* Top Row Cards */}
-              <div className="bg-yellow-400 p-6 rounded-lg">
+              <div className="bg-white p-6 rounded-lg">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center">
-                    <span className="text-yellow-400 text-lg">🙌</span>
+                  <div className="w-8 h-8 bg-green-800 rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg">🙌</span>
                   </div>
                   <h4 className="font-bold text-gray-900">Discover & Celebrate</h4>
                 </div>
@@ -155,10 +148,10 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="bg-yellow-400 p-6 rounded-lg">
+              <div className="bg-white p-6 rounded-lg">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center">
-                    <span className="text-yellow-400 text-lg">🛡️</span>
+                  <div className="w-8 h-8 bg-green-800 rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg">🛡️</span>
                   </div>
                   <h4 className="font-bold text-gray-900">Explore Diverse Businesses</h4>
                 </div>
@@ -168,10 +161,10 @@ export default function HomePage() {
               </div>
 
               {/* Bottom Card - Spans full width on larger screens */}
-              <div className="bg-yellow-400 p-6 rounded-lg md:col-span-2 lg:col-span-1 xl:col-span-2">
+              <div className="bg-white p-6 rounded-lg md:col-span-2 lg:col-span-1 xl:col-span-2">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center">
-                    <span className="text-yellow-400 text-lg">🏆</span>
+                  <div className="w-8 h-8 bg-green-800 rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg">🏆</span>
                   </div>
                   <h4 className="font-bold text-gray-900">Early Bird Perks</h4>
                 </div>
@@ -183,7 +176,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
 
       {/* Community Section */}
       <section className="relative bg-green-600 py-16 overflow-hidden">
@@ -204,9 +196,11 @@ export default function HomePage() {
             Whether you're looking to network, give back, or pursue new opportunities, NACR is where Nigerians in
             Chicago connect, grow, and thrive.
           </p>
-          <CustomButton variant="secondary" size="lg">
-            Contact Us →
-          </CustomButton>
+          <a href="tel:(312) 555-0123"> 
+            <CustomButton variant="secondary" size="lg">
+              Contact Us →
+            </CustomButton>
+          </a>
         </div>
       </section>
 
@@ -216,25 +210,19 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             {/* Logo */}
             <div className="flex items-center space-x-2 mb-4 md:mb-0 h-24">
-              <img
-                src="/ng-chicago-logo.webp"
-                alt="NACR Logo"
-                width={40}
-                height={40}
-                className="h-full w-auto py-4" 
-              />
+              <img src="/ng-chicago-logo.webp" alt="NACR Logo" width={40} height={40} className="h-full w-auto py-4" />
             </div>
 
             {/* Contact Info */}
             <div className="flex items-center space-x-6 text-sm text-gray-600">
-              <div className="flex items-center space-x-2">
+              <a href="mailto:nacr@chicagonigerians.com" className="flex items-center space-x-2">
                 <Mail size={16} />
                 <span>nacr@chicagonigerians.com</span>
-              </div>
-              <div className="flex items-center space-x-2">
+              </a>
+              <a href="tel:(312) 555-0123" className="flex items-center space-x-2">
                 <Phone size={16} />
                 <span>(312) 555-0123</span>
-              </div>
+              </a>
             </div>
           </div>
 

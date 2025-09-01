@@ -114,7 +114,7 @@ export default function EventPage() {
 
                 <div className="mt-6 pt-4 border-t border-[#00000038] ">
                   <p className="text-sm text-custom-gray">
-                    Celebrate Nigeria's 64th Independence with cultural performances, authentic cuisine, networking
+                    Celebrate Nigeria's 65th Independence with cultural performances, authentic cuisine, networking
                     opportunities, and live entertainment. Join us for an unforgettable evening honoring our nation's
                     heritage and future.
                   </p>
@@ -199,7 +199,7 @@ export default function EventPage() {
                         <Star className="size-4 text-[#F4D10C]"/>
                         <h4 className="text-lg">VIP Ticket</h4>
                       </div>
-                      <span className="badge">$500</span>
+                      <span className="badge">$50</span>
                     </div>
 
                     <p className="text-sm text-custom-gray mb-4">
@@ -253,26 +253,26 @@ export default function EventPage() {
               </div>
             )}
 
-            {/* Share Event */}
+            {/* Follow Us */}
             <div className="bg-white rounded-[18px] border shadow-sm">
               <div className="p-6">
                 <div className="flex items-start gap-5 mb-4">
                   <Share2Icon className="size-6 mt-1 text-green-600" />
                   <div>
-                    <h3 className="text-xl font-tienne font-semibold mb-5">Share Event</h3>
+                    <h3 className="text-xl font-tienne font-semibold mb-5">Follow Us</h3>
                     <div className="flex gap-3">
-                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
+                      <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61579160920391" className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
                         <Facebook className="w-4 h-4" />
-                      </button>
-                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
+                      </a>
+                      <a href="https://x.com/chicagoNGNS" className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
                         <Twitter className="w-4 h-4" />
-                      </button>
-                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
+                      </a>
+                      <a href="https://www.linkedin.com/company/chicago-nigerians/about/?viewAsMember=true" className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
                         <Linkedin className="w-4 h-4" />
-                      </button>
-                      <button className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
+                      </a>
+                      <a href="https://www.instagram.com/chicago9ja/" className="flex-1 flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50 cursor-pointer">
                         <Instagram className="w-4 h-4" />
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
