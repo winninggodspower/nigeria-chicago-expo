@@ -43,8 +43,13 @@ export default function HomePage() {
             {/* Left Column - Logo and Come and Connect */}
             <div className="text-center lg:text-left">
               {/* CN Logo */}
-              <div className="flex justify-center lg:justify-start mb-8">
-                <img src="/CN-logo.webp" alt="NACR Logo" width={100} height={100} className="size-80" />
+               <div className="flex justify-center lg:justify-start mb-8">
+                <div className="bg-white rounded-2xl p-6 shadow-lg">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-green-700 mb-2">CN</div>
+                    <div className="text-sm font-medium text-gray-600 uppercase tracking-wider">Chicago Nigerians</div>
+                  </div>
+                </div>
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-4">Come and Connect</h3>
