@@ -16,7 +16,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/african-women.webp')",
+            backgroundImage: "url('/hero-bg.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
