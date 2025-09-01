@@ -1,0 +1,38 @@
+/* [next]/internal/font/google/tienne_2b319c4b.module.css [app-client] (css) */
+@font-face {
+  font-family: Tienne;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../media/b89814fd306a4033-s.746e8e27.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Tienne;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../media/db389a3fdee8fe55-s.b54162fe.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Tienne Fallback;
+  src: local(Times New Roman);
+  ascent-override: 78.69%;
+  descent-override: 28.07%;
+  line-gap-override: 0.0%;
+  size-adjust: 125.96%;
+}
+
+.tienne_2b319c4b-module__7qt0BW__className {
+  font-family: Tienne, Tienne Fallback;
+  font-style: normal;
+}
+
+.tienne_2b319c4b-module__7qt0BW__variable {
+  --font-tienne: "Tienne", "Tienne Fallback";
+}
+
+/*# sourceMappingURL=%5Bnext%5D_internal_font_google_tienne_2b319c4b_module_css_bad6b30c._.single.css.map*/
