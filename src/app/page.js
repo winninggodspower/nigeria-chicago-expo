@@ -3,9 +3,12 @@
 import { Phone, Mail, Check } from "lucide-react"
 import CustomButton from "@/components/custom-button"
 import Navbar from "./components/navbar"
+import { useModal } from "./hook/use-modal"
 import Link from "next/link"
 
 export default function HomePage() {
+  let {openModal} = useModal()
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -27,11 +30,9 @@ export default function HomePage() {
             <p className="text-lg md:text-xl mb-8 text-pretty opacity-90">
               A welcoming community for friendship, culture, business, and support - online and in person.
             </p>
-            <Link href="/event">
-              <CustomButton variant="secondary" size="lg">
+              <CustomButton variant="secondary" size="lg" onClick={openModal}>
                 Join Free →
               </CustomButton>
-            </Link>
           </div>
         </div>
       </section>
@@ -39,26 +40,7 @@ export default function HomePage() {
       {/* What We're Building Section */}
       <section className="bg-green-700 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Logo and Come and Connect */}
-            <div className="text-center lg:text-left">
-              {/* CN Logo */}
-               <div className="flex justify-center lg:justify-start mb-8">
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-green-700 mb-2">CN</div>
-                    <div className="text-sm font-medium text-gray-600 uppercase tracking-wider">Chicago Nigerians</div>
-                  </div>
-                </div>
-              </div>
-
-              <h3 className="text-2xl font-bold text-white mb-4">Come and Connect</h3>
-              <p className="text-green-100 text-lg leading-relaxed">
-                Chicago Nigerians is NACR's online space where most of the activity happens. It's where members chat,
-                share experiences, and keep the energy going between meetups.
-              </p>
-            </div>
-
+          <div className="grid lg:grid-cols-1 gap-12 items-center">
             {/* Right Column - What We're Building */}
             <div>
               <h2 className="text-4xl font-bold text-white mb-6">What We're Building</h2>
@@ -92,11 +74,9 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <Link href="/event">
-                <CustomButton variant="secondary" size="lg">
+                <CustomButton variant="secondary" size="lg" onClick={openModal}>
                   Join Free →
                 </CustomButton>
-              </Link>
             </div>
           </div>
         </div>
@@ -133,7 +113,7 @@ export default function HomePage() {
 
               <Link href="/event">
                 <CustomButton variant="secondary" size="lg">
-                  Get Your Free Ticket →
+                  Get Your Ticket →
                 </CustomButton>
               </Link>
             </div>
@@ -232,7 +212,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-6 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
-            © 2024 Nigerian Association of Chicago Residents - All Rights Reserved
+            © 2025 Nigerian Association of Chicago Residents - All Rights Reserved
           </div>
         </div>
       </footer>

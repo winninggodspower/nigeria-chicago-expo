@@ -20,6 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <script src="https://links.chicagonigerians.com/js/form_embed.js" async={true}></script>
       <body 
         className={`${tienne.variable} ${poppins.className} antialiased`}
       >

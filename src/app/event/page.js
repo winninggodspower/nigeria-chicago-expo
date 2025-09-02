@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import {
   Calendar,
   Clock,
@@ -46,8 +46,15 @@ const ticketIframes = {
 export default function EventPage() {
   const [selectedTicket, setSelectedTicket] = useState('vendor') // "regular" | "vendor" | "vip"
 
+  const formRef = useRef(null)
+
   const handleTicketSelect = (ticketType) => {
     setSelectedTicket(ticketType)
+
+    // Scroll only on mobile (width <= 768px)
+    if (window.innerWidth <= 768 && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
   }
 
   return (
@@ -223,7 +230,7 @@ export default function EventPage() {
           </div>
 
           {/* Right Column - Purchase Panel & Social */}
-          <div className="space-y-6">
+          <div className="space-y-6"  ref={formRef}>
 
             {/* Registration Form */}
             {selectedTicket && (
