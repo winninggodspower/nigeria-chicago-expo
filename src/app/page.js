@@ -181,11 +181,9 @@ export default function HomePage() {
             Whether you're looking to network, give back, or pursue new opportunities, NACR is where Nigerians in
             Chicago connect, grow, and thrive.
           </p>
-          <a href="tel:(312) 555-0123"> 
-            <CustomButton variant="secondary" size="lg">
-              Contact Us →
-            </CustomButton>
-          </a>
+          <CustomButton variant="secondary" size="lg" onClick={openModal}>
+            Contact Us →
+          </CustomButton>
         </div>
       </section>
 

@@ -94,7 +94,7 @@ export default function EventPage() {
                     <div className="flex items-center gap-3">
                       <Calendar className="w-4 h-4 text-custom-gray" />
                       <div>
-                        <p className="text-lg">October 1, 2025</p>
+                        <p className="text-lg">October 4, 2025</p>
                         <p className="text-sm text-gray-600">Independence Day</p>
                       </div>
                     </div>
