@@ -56,7 +56,7 @@ export default function Navbar() {
               <Link href={"/event"} className="text-gray-700 hover:text-green-600 font-medium">
                 About Us
               </Link>
-              <CustomButton variant="outline" className="w-fit" onClick={onShowModal}>
+              <CustomButton variant="outline" className="w-fit" onClick={openModal}>
                 Contact Us
               </CustomButton>
             </div>
